@@ -39,3 +39,15 @@ jobs:
         run: |
           cd MLProject
           python modelling.py
+
+      - name: Upload Model Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trained-model
+          path: MLProject/artifacts
+
+      - name: Upload MLflow Runs
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlruns
+          path: MLProject/mlruns
