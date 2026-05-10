@@ -34,10 +34,8 @@ jobs:
           pip install numpy
           pip install scikit-learn
 
-      - name: Run MLflow Project
+      - name: Run Training
         shell: bash -l {0}
-        env:
-          MLFLOW_TRACKING_URI: file:./mlruns
         run: |
           cd MLProject
-          mlflow run .
+          python modelling.py
